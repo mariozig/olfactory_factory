@@ -12,3 +12,16 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+.masthead {
+  background: image-url("background.png") repeat center center;
+  padding: 70px 0 80px;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.masthead h1 {
+  font-size: 90px;
+  line-height: 1;
+  letter-spacing: -2px;
+}

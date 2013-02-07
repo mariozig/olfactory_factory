@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="masthead">
+  <div class="container clearfix">
+    <%= image_tag "nice-nose.jpg", :class => "pull-left img-circle", :width => "80px" %>
+    <h1>Olfactory Factory</h1>
+  </div>
+</div>
+
 <div class="container">
   <%= yield %>
 </div>
