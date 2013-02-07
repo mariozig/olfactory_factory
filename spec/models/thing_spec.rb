@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Thing do
-  before { @thing = Thing.new(name: "lemon") }
+  before { @thing = FactoryGirl.create(:thing) }
 
   subject { @thing }
 

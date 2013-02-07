@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Sensing do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @sensing = FactoryGirl.create(:sensing) }
+
+  subject { @sensing }
+
+  it { should respond_to(:thing) }
+  it { should respond_to(:adjective) }
+  it { should be_valid }
 end

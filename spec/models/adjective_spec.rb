@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Adjective do
-  before { @adjective = Adjective.new(name: "bright") }
+  before { @adjective =  FactoryGirl.create(:adjective) }
 
   subject { @adjective }
 
