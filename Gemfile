@@ -6,6 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'bootstrap-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,6 +28,10 @@ group :development do
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'factory_girl_rails'
 end
 
 

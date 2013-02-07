@@ -1,3 +1,6 @@
 class Sensing < ActiveRecord::Base
-  attr_accessible :adjective_id, :thing_id
+  belongs_to :thing
+  belongs_to :adjective
+
+  attr_accessible :adjective_id, :thing_id, :adjective, :thing
 end
