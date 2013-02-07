@@ -20,6 +20,7 @@ class ThingsController < ApplicationController
   end
 
   def index
+    @things = Thing.all
   end
 
   def destroy

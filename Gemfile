@@ -22,18 +22,15 @@ end
 
 gem 'jquery-rails'
 
-group :development do
+group :development, :test do
   # also, on Mac, add rb-fsevent (rb-inotifyon Linux); this will make
   # guard run faster.
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'rspec-rails'
-end
-
-group :test do
+  gem 'capybara', '1.1.2'
   gem 'factory_girl_rails'
 end
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

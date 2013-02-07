@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="span4">
+    <%= link_to thing.name, thing_path(thing) %>
+  </div>
+  <div class="span8">
+    <%= link_to "<i class='icon-trash'></i>".html_safe, thing_path(thing, :method => :delete) %>
+  </div>
+</div>
