@@ -22,6 +22,14 @@ end
 
 gem 'jquery-rails'
 
+group :development do
+  gem 'guard'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+end
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
