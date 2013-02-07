@@ -6,7 +6,6 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'rspec-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,10 +22,11 @@ end
 gem 'jquery-rails'
 
 group :development do
-  gem 'guard'
-  gem 'rb-inotify', :require => false
-  gem 'rb-fsevent', :require => false
-  gem 'rb-fchange', :require => false
+  # also, on Mac, add rb-fsevent (rb-inotifyon Linux); this will make
+  # guard run faster.
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
 end
 
 
