@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe ThingsController do
+  let(:test_thing) { Thing.create! valid_attributes }
 
   def valid_attributes
     { :name => "Fish Oil" }
@@ -18,15 +19,14 @@ describe ThingsController do
       response.should be_success
     end
 
-    it "assigns a new thing as @thing" do
+    it "assigns a new thing as test_thing" do
       assigns(:thing).should be_a_new(Thing)
     end
   end
 
   describe "GET 'index'" do
     before(:each) do
-      @thing = Thing.create! valid_attributes
-      get :index, { :id => @thing.to_param }, valid_session
+      get :index, { :id => test_thing.to_param }, valid_session
     end
 
     it "should be successful" do
@@ -34,22 +34,21 @@ describe ThingsController do
     end
 
     it "assigns all things as @things" do
-      assigns(:things).should eq([@thing])
+      assigns(:things).should eq([test_thing])
     end
   end
 
   describe "GET 'show'" do
     before(:each) do
-      @thing = Thing.create! valid_attributes
-      get :show, { :id => @thing.to_param }, valid_session
+      get :show, { :id => test_thing.to_param }, valid_session
     end
 
     it "should be successful" do
       response.should be_success
     end
 
-    it "assigns the requested thing as @thing" do
-      assigns(:thing).should eq(@thing)
+    it "assigns the requested thing as test_thing" do
+      assigns(:thing).should eq(test_thing)
     end
   end
 
@@ -65,7 +64,7 @@ describe ThingsController do
         }.to change(Thing, :count).by(1)
       end
 
-      it "assigns a newly created thing as @thing" do
+      it "assigns a newly created thing as test_thing" do
         assigns(:thing).should be_a(Thing)
         assigns(:thing).should be_persisted
       end
