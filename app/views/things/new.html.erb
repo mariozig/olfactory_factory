@@ -1,2 +1,10 @@
-<h1>Things#new</h1>
-<p>Find me in app/views/things/new.html.erb</p>
+<h1>Add a New Thing</h1>
+<%= form_for(@thing) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Create Thing", :class => "btn btn-primary" %>
+  </p>
+<% end %>
