@@ -33,6 +33,8 @@ class ThingsController < ApplicationController
   end
 
   #-----------------
+  # This probably isn't necessary but just thinking of a way to dry up
+  # the code
   private
     def find_thing
       @thing = Thing.find(params[:id])
