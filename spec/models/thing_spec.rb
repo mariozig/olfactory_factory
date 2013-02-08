@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Thing do
-  before { @thing = FactoryGirl.create(:thing) }
-
-  subject { @thing }
+  subject(:thing) { FactoryGirl.create(:thing) }
 
   it { should respond_to(:name) }
   it { should respond_to(:sensings) }

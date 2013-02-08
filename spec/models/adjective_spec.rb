@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Adjective do
-  before { @adjective =  FactoryGirl.create(:adjective) }
-
-  subject { @adjective }
+  subject(:adjective) { FactoryGirl.create(:adjective) }
 
   it { should respond_to(:name) }
   it { should respond_to(:sensings) }
