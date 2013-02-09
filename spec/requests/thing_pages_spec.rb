@@ -16,7 +16,7 @@ describe "Thing pages" do
     end
 
     describe "removing a thing" do
-      it "should have delete links" do
+      it "should have delete icons" do
         should have_css('.icon-trash', :count => 2)
       end
 
