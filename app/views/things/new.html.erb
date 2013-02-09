@@ -4,6 +4,11 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
+  <h2>Scent Adjectives</h2>
+  <%= f.fields_for :adjectives do |adjective| %>
+    <%= adjective.label :name %>
+    <%= adjective.text_field :name %>
+  <% end %>
   <p>
     <%= f.submit "Create Thing", :class => "btn btn-primary" %>
   </p>

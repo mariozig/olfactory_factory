@@ -15,6 +15,7 @@ class ThingsController < ApplicationController
 
   def new
     @thing = Thing.new
+    3.times { @thing.adjectives.build }
   end
 
   def index

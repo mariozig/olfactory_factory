@@ -1,5 +1,7 @@
 <%= page_header(@thing.name) %>
 <h3>Smells of... </h3>
 <p>
-  ...adjectives...
+  <% @thing.adjectives.order('name ASC').each do |adjective| %>
+    <%= link_to adjective.name, adjective_path(adjective), :class => "btn btn-success"%>
+  <% end %>
 </p>
