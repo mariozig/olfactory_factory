@@ -72,6 +72,9 @@ describe ThingsController do
       it "redirects to the things index" do
         response.should redirect_to(Thing)
       end
+
+      it { flash[:success].should_not be_nil }
+
     end
 
     describe "with invalid params" do

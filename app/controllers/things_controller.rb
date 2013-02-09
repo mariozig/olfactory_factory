@@ -1,18 +1,16 @@
 class ThingsController < ApplicationController
 
-  before_filter :find_thing, :only => [:show, :edit]
+  before_filter :find_thing, :only => [:show, :edit, :destroy]
 
   def create
     @thing = Thing.new(params[:thing])
 
     if @thing.save
+      flash[:success] = "Created!"
       redirect_to things_path
     else
       render 'new'
     end
-  end
-
-  def update
   end
 
   def new
@@ -24,9 +22,12 @@ class ThingsController < ApplicationController
   end
 
   def destroy
-  end
-
-  def edit
+    if @thing.destroy
+      flash[:notice] = "#{@thing.name} has been removed."
+      redirect_to things_path
+    else
+      render 'new'
+    end
   end
 
   def show

@@ -4,7 +4,9 @@
   </div>
   <div class="span9">
     <h4>
-      <%= link_to "<i class='icon-trash'></i>".html_safe, thing_path(thing, :method => :delete) %>
+      <%= link_to "<i class='icon-trash'></i>".html_safe, thing_path(thing),
+                :method => :delete,
+                :id => "destroy-thing-#{thing.id}" %>
     </h4>
   </div>
 </div>

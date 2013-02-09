@@ -14,6 +14,19 @@ describe "Thing pages" do
       it { find_link(thing1.name)[:href].should ==  thing_path(thing1) }
       it { find_link(thing2.name)[:href].should ==  thing_path(thing2) }
     end
+
+    describe "removing a thing" do
+      it "should have delete links" do
+        should have_css('.icon-trash', :count => 2)
+      end
+
+      it "should reduce the Thing count by one" do
+        expect {
+          click_link("destroy-thing-#{thing1.id}")
+        }.to change(Thing, :count).by(-1)
+      end
+    end
+
   end
 
   describe "show thing" do
